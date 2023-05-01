@@ -1,0 +1,1 @@
+A cryptography newbie, who lacks knowledge in mathematics, has devised an encryption algorithm that does not require a separate key. The person believes that encrypting the key along with the message makes the decryption harder. Can you retrieve the flag?

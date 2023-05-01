@@ -1,0 +1,1 @@
+My friend doesn't believe in encryption algorithms but believes in conjectures. So he designed this flag checker trying to prove conjectures are the best and challenged me to get the flag. Prove him wrong.
