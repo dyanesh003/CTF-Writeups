@@ -1,0 +1,11 @@
+When we look into the binary, there are two functions and out of which one is main and the main() call the other function.
+At the start of this function, there is an integer array defined which is being used later to check the flag.
+
+This function iterates the input and convert each character of the input to its corresponding ascii value. Then it multiplies the ascii value with a huge number "1056298169038583". The final output is then multiplies by 3 and 1 is added if the output is a odd number or divided by 2 if the output is even. This is repeated till the output becomes one. This is called collatz conjecture.
+
+Along with this collatz conjecture, the program counts the number of iterations does it take for a number to reach 1. If the number of iterations matches with the number in the array with its respective index, then the program continues to executes, else it exits the program. 
+
+So I wrote a small script to identify the number of iterations for each printable character and mapped with the defined array given in the function
+This is what we get after executing the script: Xiomara{xxx_['s', 'w']h0u1['c', 'd', 'z']_h4v3_3n['c', 'd', 'z']rypt3['c', 'd', 'z']_th3_f14g_xxx}
+
+There are more than one possible flags, but after eliminating some of it by common sense, we can guess the flag as Xiomara{xxx_sh0u1d_h4v3_3ncrypt3d_th3_f14g_xxx}
