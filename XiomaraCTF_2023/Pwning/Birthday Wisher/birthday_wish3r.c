@@ -26,10 +26,8 @@ void getPresent()
     int cont = 1;
     int n;
     printf("Enter the length of the name: ");
-    // fflush( stdout );
     scanf("%d",&n);
     printf("Enter the name of the person: ");
-    // fflush( stdout );
     read(0,input,n);
     printf("Happy Birthday %s\n",input);
     if (!strncmp(input,"root",4))
@@ -38,10 +36,8 @@ void getPresent()
     }
     else
     {
-        // fflush( stdout );
         printf("Sorry, there is no present available for %s\n",input);    
         printf("Want to wish for more people?   Enter 1 to continue: ");
-        // fflush( stdout );
         scanf("%d",&cont);
         printf("\n");
         if(cont == 1)
