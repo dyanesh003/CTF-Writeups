@@ -1,0 +1,23 @@
+The given binary reads the contents from flag.txt and encrypts the text and writes it back to flag.txt
+
+Lets see how it encrypts the data:
+1.) First it finds the number of bytes in the file and if it is less than 8 bytes, the program appends 8 zeros ("00000000") at end of the string.
+2.) Iterates each byte, converts it into bits and appends "0000" at the end of each byte.
+3.) Replaces last 4 bits with the first 4 bits of next character.
+4.) Sets seed as time(0) and xors mutliple times with two loops using the rand()%256
+5.) Iterates through the data and removes the first 4 bits from each character
+6.) Creates a vector<int> and
+    6.1) iterates the first 8 bytes of the original data
+    6.2) takes the first 4 bits from even indices and last 4 bits from odd indices
+    6.3) combines these two 4 bits to make a 8bit integer and appends to the vector
+7.) xors the altered input with this vector
+8.) again iterates the altered input and xors it with the previous element.
+9.) dumps the altered input to flag.txt
+
+To reverse the above operations and get the flag, I wrote a script which does the following sequentially:
+1.) Reads the flag.txt and xors the bytes with the previous element.
+2.) We all know the first 8 bytes of the flag i.e. "Xiomara{". So with this we can create the second key and xor with the data.
+3.) Then we need to know the seed that has been used to generate random numbers and xor with two nested loops. For that we can use 'stat' command in the linux to get the last modified time but this will be in UTC. We can use a online epoch converter to convert UTC to epoch time.
+4.) Using this as key, we can reverse the nested loop xor done by the binary.
+5.) Now the each byte of data we have has last 4 bits of the original byte and first 4 bits of the next byte in original flag. So the script puts the bits in the right position and prints the flag.
+6.) If you run the script, you can get the flag as Xiomara{X0r_w0nt_h31p_u_k33p_ur_s3cr3t}
