@@ -1,0 +1,10 @@
+The chall binary prompts for a string input. After receiving the input, it checks whether the length of the string is 42. From this we can figure out that the length of the flag is 42.
+
+Then the program does the following operations:
+1.) divides the string into 6 bytes and reverses it
+2.) divides each 6 byte string into 3 bytes and reverses it
+3.) appends it to a single string and divides it again bytes for 3 and swaps even and odd indices of 3byte strings
+4.) xors it with 0x2d
+5.) checks whether the altered input is equal to int array declared in the program
+
+So first we need to xor the defined array in the program with 0x2d. Then if we notice that the program reverses the input, twice, nullifying the effects of two reversing. Therefore we can skip all the revering and just redo the 3rd step, divide the string into bytes of 3 and swap the even and odd 3byte strings. If you run the script, you can get the flag as Xiomara{W31c0m3_t0_th3_w0rld_0f_r3v3rsing}
